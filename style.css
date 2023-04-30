@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 /* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
@@ -76,3 +77,83 @@ select {
 }
 
 /* My Style */
+:root {
+    --primary: #000000;
+    --secondary: #333333; 
+    --tertiary: #9F9F9F;
+    --highlight: #F69906;
+}
+
+body {
+    background-color: var(--primary);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    min-width: 390;
+    width: 390px;
+    height: 866px;
+    padding: 32px;
+}
+
+.on-desktop {
+    background: #000000;
+    box-shadow: 3px 5px 10px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+}
+
+.text-output {
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    width: 100%;
+    text-align: right;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.round-button {
+    background-color: var(--secondary);
+    color: white;
+    width: 75px;
+    height: 75px;
+    font-size: 40px;
+    border: none;
+    text-align: center;
+    padding: 10px 15px 15px 15px;
+    border-radius: 50%;
+}
+
+.orange-button {
+    background-color: var(--highlight);
+    color: white;
+}
+
+.light-button {
+    background-color: var(--tertiary);
+    color:#000000;
+}
+
+#clear {
+    font-size: 32px;
+    padding: 15px;
+}
+
+#zero {
+    width: 160px;
+    text-align: left;
+    border-radius: 75px;
+    grid-column: span 2;
+    padding: 10px 15px 15px 30px;
+}
