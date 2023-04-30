@@ -101,20 +101,26 @@ body {
     min-width: 390;
     width: 390px;
     height: 866px;
-    padding: 32px;
+    padding: 24px;
+    gap: 24px;
 }
 
 .on-desktop {
     background: #000000;
     box-shadow: 3px 5px 10px 4px rgba(255, 255, 255, 0.25);
-    border-radius: 25px;
+    border-radius: 50px;
 }
 
 .text-output {
-    font-family: 'Roboto', sans-serif;
-    font-size: 64px;
+    display: flex;
+    flex-direction: column-reverse; 
     width: 100%;
-    text-align: right;
+    height: 25%;
+    text-align: end;
+}
+
+#output {
+    font-size: 64px;
 }
 
 .button-container {
@@ -150,10 +156,23 @@ body {
     padding: 15px;
 }
 
-#zero {
+.zero {
     width: 160px;
     text-align: left;
     border-radius: 75px;
     grid-column: span 2;
     padding: 10px 15px 15px 30px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
 }

@@ -11,7 +11,7 @@
 <body class="center">
     <div class="calculator center on-desktop">
         <div class="text-output">
-            <h2 id="output">0</h2>
+            <div class="output" id="output">0</div>
         </div>
         <div class="button-container">
             <button class="round-button center light-button" id="clear" value="clear">
@@ -62,10 +62,10 @@
             <button class="round-button orange-button" id="plus" value="+">
                 +
             </button>
-            <button class="round-button" id="zero" value="0">
+            <button class="round-button zero" id="number" value="0">
                 0
             </button>
-            <button class="round-button" id="decimal" value=".">
+            <button class="round-button" id="number" value=".">
                 .
             </button>
             <button class="round-button orange-button" id="equal" value="=">
@@ -73,5 +73,15 @@
             </button>
         </div>
     </div>
+
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        winfreydevera
+      </p>
+    </footer>
 </body>
 </html>
