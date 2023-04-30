@@ -1,13 +1,20 @@
 const textOutput = document.getElementById('output');
 const numberButtons = document.querySelectorAll('#number');
+const clearButton = document.getElementById('clear');
 
-function updateTextOutput(e) {
+clearButton.onclick = () => clearAll();
+
+function updateTextOutput() {
     if (textOutput.textContent === "0") {
-        textOutput.textContent = e.target.value
+        textOutput.textContent = this.value; 
     } else {
-        textOutput.textContent += e.target.value;
+        textOutput.textContent += this.value;
     }
 }
+
+function clearAll() {
+    textOutput.textContent = '0';
+}
 numberButtons.forEach(numberButton => {
-    numberButton.addEventListener('click', (e) => updateTextOutput(e));
+    numberButton.addEventListener('click', updateTextOutput);
 })
