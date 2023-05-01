@@ -39,6 +39,7 @@ function numberWithCommas(x) {
 }
 
 function clearAll() {
+    resetClearButton();
     textOutput.textContent = '0';
 }
 
