@@ -6,6 +6,7 @@ const operationBtns = document.querySelectorAll('.operation');
 const equalBtn = document.getElementById('equal');
 const decimalPoint = document.getElementById('decimalPoint');
 const percentButton = document.getElementById('percent');
+const negetiveButton = document.getElementById('plus-minus');
 
 
 let currentOperation = '';
@@ -16,6 +17,7 @@ let nextValue = 0;
 clearButton.onclick = () => clearAll();
 decimalPoint.onclick = () => addDecimal();
 percentButton.onclick = () => percentNumber();
+negetiveButton.onclick = () => negativeSwap();
 
 function updateTextOutput() {
     const textOutputSize = textOutput.textContent.length;
@@ -31,7 +33,13 @@ function updateTextOutput() {
 }
 
 function percentNumber() {
-    textOutput.textContent = percent(textOutput.textContent);
+    text = textOutput.textContent.replace(/,/g, '');
+    textOutput.textContent = numberWithCommas(percent(text));
+}
+
+function negativeSwap() {
+    text = textOutput.textContent.replace(/,/g, '');
+    textOutput.textContent = numberWithCommas(negative(text));
 }
 
 function addDecimal() {
@@ -55,6 +63,7 @@ function numberWithCommas(x) {
 
 function clearAll() {
     resetClearButton();
+    clearPressedOperation();
     textOutput.textContent = '0';
 }
 
@@ -82,9 +91,12 @@ function checkOperation() {
     operationOn = isOn;
 }
 
+
 numberButtons.forEach(numberButton => {
     numberButton.addEventListener('click', updateTextOutput);
 })
+
+
 
 operationBtns.forEach(operationBtn => {
     operationBtn.addEventListener('click', () => {
@@ -152,4 +164,12 @@ function divide(a, b) {
 
 function percent(n) {
     return Number(n) / 100;
+}
+
+function negative(n) {
+    const x = Number(n);
+    if (x < 0) {
+        return x + (x * -2);
+    }
+    return x - (x * 2);
 }
