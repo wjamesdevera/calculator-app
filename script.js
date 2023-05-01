@@ -17,12 +17,21 @@ function updateTextOutput() {
     const textOutputSize = textOutput.textContent.length;
     let text = textOutput.textContent.replace(/,/g, '');
     checkClearCheckBox();
+    changeClearButton();
     if (textOutput.textContent === "0") {
         textOutput.textContent = this.value;
     } else if (textOutputSize < 11) {
         text += this.value;
         textOutput.textContent = numberWithCommas(text);
     }
+}
+
+function changeClearButton() {
+    clearButton.textContent = 'C';
+}
+
+function resetClearButton() {
+    clearButton.textContent = 'AC';
 }
 
 function numberWithCommas(x) {
@@ -76,6 +85,7 @@ operationBtns.forEach(operationBtn => {
 
 
 function compute() {
+    resetClearButton();
     checkOperation();
     console.log(operationOn);
     let result = 0;

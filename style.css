@@ -5,7 +5,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -19,37 +19,37 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
-  list-style: none;
+list-style: none;
 }
 
 /* Set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+min-height: 100vh;
+text-rendering: optimizeSpeed;
+line-height: 1.5;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+max-width: 100%;
+display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -57,117 +57,139 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+font: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+html:focus-within {
+  scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
 }
 
 /* My Style */
 :root {
-    --primary: #000000;
-    --secondary: #333333; 
-    --tertiary: #9F9F9F;
-    --highlight: #F69906;
+  --primary: #000000;
+  --secondary: #333333; 
+  --tertiary: #9F9F9F;
+  --highlight: #F69906;
 }
 
 body {
-    background-color: var(--primary);
-    color: white;
-    font-family: 'Roboto', sans-serif;
+  background-color: var(--primary);
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .calculator {
-    min-width: 390;
-    width: 390px;
-    height: 866px;
-    padding: 24px;
-    gap: 24px;
+  min-width: 390;
+  width: 390px;
+  height: 866px;
+  padding: 24px;
+  gap: 24px;
 }
 
 .on-desktop {
-    background: #000000;
-    box-shadow: 3px 5px 10px 4px rgba(255, 255, 255, 0.25);
-    border-radius: 50px;
+  background: #000000;
+  box-shadow: 3px 5px 10px 4px rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
 }
 
 .text-output {
-    display: flex;
-    flex-direction: column-reverse; 
-    width: 100%;
-    height: 25%;
-    text-align: end;
+  display: flex;
+  flex-direction: column-reverse; 
+  width: 100%;
+  height: 25%;
+  text-align: end;
 }
 
 #output {
-    font-size: 64px;
+  font-size: 64px;
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 .round-button {
-    background-color: var(--secondary);
-    color: white;
-    width: 75px;
-    height: 75px;
-    font-size: 40px;
-    border: none;
-    text-align: center;
-    padding: 10px 15px 15px 15px;
-    border-radius: 50%;
+  color: white;
+  width: 75px;
+  height: 75px;
+  font-size: 40px;
+  border: none;
+  text-align: center;
+  padding: 10px 15px 15px 15px;
+  border-radius: 50%;
 }
 
+.gray-button {
+  background-color: var(--secondary);
+}
+
+.gray-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
+}
+
+
 .orange-button {
-    background-color: var(--highlight);
-    color: white;
+  background-color: var(--highlight);
+  color: white;
+}
+
+.orange-button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
 }
 
 .light-button {
-    background-color: var(--tertiary);
-    color:#000000;
+  background-color: var(--tertiary);
+  color:#000000;
+}
+
+.light-button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(255, 255, 255, 0.24);
 }
 
 #clear {
-    font-size: 32px;
-    padding: 15px;
+  font-size: 32px;
+  padding: 15px;
 }
 
 .zero {
-    width: 160px;
-    text-align: left;
-    border-radius: 75px;
-    grid-column: span 2;
-    padding: 10px 15px 15px 30px;
+  width: 160px;
+  text-align: left;
+  border-radius: 75px;
+  grid-column: span 2;
+  padding: 10px 15px 15px 30px;
 }
 
 .orange-pressed {
   background-color: white;
   color: black;
 }
+
+
 
 .footer {
   position: absolute;
