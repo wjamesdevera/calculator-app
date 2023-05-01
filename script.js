@@ -4,6 +4,7 @@ const numberButtons = document.querySelectorAll('#number');
 const clearButton = document.getElementById('clear');
 const operationBtns = document.querySelectorAll('.operation');
 const equalBtn = document.getElementById('equal');
+const decimalPoint = document.getElementById('decimalPoint');
 
 
 let currentOperation = '';
@@ -12,6 +13,7 @@ let firstValue = 0;
 let nextValue = 0;
 
 clearButton.onclick = () => clearAll();
+decimalPoint.onclick = () => addDecimal();
 
 function updateTextOutput() {
     const textOutputSize = textOutput.textContent.length;
@@ -24,6 +26,13 @@ function updateTextOutput() {
         text += this.value;
         textOutput.textContent = numberWithCommas(text);
     }
+}
+
+function addDecimal() {
+    if (textOutput.textContent.includes('.')) {
+        return;
+    }
+    textOutput.textContent += '.';
 }
 
 function changeClearButton() {
