@@ -5,6 +5,7 @@ const clearButton = document.getElementById('clear');
 const operationBtns = document.querySelectorAll('.operation');
 const equalBtn = document.getElementById('equal');
 const decimalPoint = document.getElementById('decimalPoint');
+const percentButton = document.getElementById('percent');
 
 
 let currentOperation = '';
@@ -14,6 +15,7 @@ let nextValue = 0;
 
 clearButton.onclick = () => clearAll();
 decimalPoint.onclick = () => addDecimal();
+percentButton.onclick = () => percentNumber();
 
 function updateTextOutput() {
     const textOutputSize = textOutput.textContent.length;
@@ -26,6 +28,10 @@ function updateTextOutput() {
         text += this.value;
         textOutput.textContent = numberWithCommas(text);
     }
+}
+
+function percentNumber() {
+    textOutput.textContent = percent(textOutput.textContent);
 }
 
 function addDecimal() {
@@ -142,4 +148,8 @@ function multiply(a, b) {
 
 function divide(a, b) {
     return Number(a) / Number(b);
+}
+
+function percent(n) {
+    return Number(n) / 100;
 }
